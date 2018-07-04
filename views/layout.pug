@@ -1,7 +1,59 @@
+include _lib
+
 doctype html
 html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    block content
+    head
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+
+        +css('//fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900')
+        +css('css/icons/icomoon/styles.css')
+        +css('css/bootstrap.css')
+        +css('css/core.css')
+        +css('css/components.css')
+        +css('css/colors.css')
+
+        +js('js/plugins/loaders/pace.min.js')
+        +js('js/core/libraries/jquery.min.js')
+        +js('js/core/libraries/bootstrap.min.js')
+        +js('js/plugins/loaders/blockui.min.js')
+        +js('js/plugins/ui/nicescroll.min.js')
+        +js('js/plugins/ui/drilldown.js')
+        +js('js/core/libraries/jquery_ui/core.min.js')
+        +js('js/core/libraries/jquery_ui/effects.min.js')
+        +js('js/core/libraries/jquery_ui/interactions.min.js')
+        +js('js/plugins/extensions/cookie.js')
+        +js('js/plugins/forms/styling/switchery.min.js')
+        +js('js/plugins/forms/styling/uniform.min.js')
+        +js('js/plugins/trees/fancytree_all.min.js')
+        +js('js/plugins/trees/fancytree_childcounter.js')
+        +js('js/core/app.js')
+        +js('js/pages/extra_trees.js')
+
+    body.login-container
+        .navbar.navbar-inverse
+            .navbar-header
+                a.navbar-brand(href='index.html')
+                    img(src='/images/logo_light.png', alt='')
+                ul.nav.navbar-nav.pull-right.visible-xs-block
+                    li
+                        a(data-toggle='collapse', data-target='#navbar-mobile')
+                            i.icon-tree5
+            #navbar-mobile.navbar-collapse.collapse
+                ul.nav.navbar-nav.navbar-right
+                    li
+                        a(href='#')
+                            i.icon-display4
+                            span.visible-xs-inline-block.position-right  Go to website
+                    li
+                        a(href='#')
+                            i.icon-user-tie
+                            span.visible-xs-inline-block.position-right  Contact admin
+                    li.dropdown
+                        a.dropdown-toggle(data-toggle='dropdown')
+                            i.icon-cog3
+                            span.visible-xs-inline-block.position-right  Options
+
+
+        block content
