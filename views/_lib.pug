@@ -1,0 +1,11 @@
+mixin css(path)
+    if path.indexOf('//') === 0
+        link(rel='stylesheet' href=path)
+    else
+        link(rel='stylesheet' href='/stylesheets/' + path)
+
+mixin js(path)
+    if path.indexOf('//') === 0
+        script(src=path)
+    else
+        script(src='/javascripts/' + path)
