@@ -1,0 +1,40 @@
+extends layout
+
+block content
+    .page-container(data-error=`${error}`)
+        // Page content
+        .page-content
+            // Main content
+            .content-wrapper
+                // Advanced login
+                form(action='/login/join/do', method='post')
+                    .panel.panel-body.login-form
+                        .text-center
+                            .icon-object.border-success.text-success
+                                i.icon-plus3
+                            h5.content-group
+                                | Create account
+                                small.display-block All fields are required
+                        .content-divider.text-muted.form-group
+                            span Your credentials
+                        .form-group.has-feedback.has-feedback-left
+                            input.form-control(type='text', placeholder='Create ID', name='ID')
+                            .form-control-feedback
+                                i.icon-user-check.text-muted
+                        .form-group.has-feedback.has-feedback-left
+                            input.form-control(type='password', placeholder='Create password', name='password')
+                            .form-control-feedback
+                                i.icon-user-lock.text-muted
+                        button.btn.bg-teal.btn-block.btn-lg(type='submit')
+                            | Register
+                            i.icon-circle-right2.position-right
+                // /advanced login
+            // /main content
+        // /page content
+
+    script.
+        var status = document.querySelector('.page-container').getAttribute('data-error');
+
+        if (status === 'true') {
+            alert('동일한 ID가 존재합니다');
+        }

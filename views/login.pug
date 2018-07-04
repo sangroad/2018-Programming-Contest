@@ -1,0 +1,51 @@
+extends layout
+
+block content
+    // Page container
+    .page-container(data-join=`${join}` data-login=`${noError}`)
+        // Page content
+        .page-content
+            // Main content
+            .content-wrapper
+                // Advanced login
+                form(action='/login/do', method='post')
+                    .panel.panel-body.login-form
+                        .text-center
+                            .icon-object.border-slate-300.text-slate-300
+                                i.icon-reading
+                            h5.content-group
+                                | Login to your account
+                                small.display-block Your credentials
+                        .form-group.has-feedback.has-feedback-left
+                            input.form-control(type='text', placeholder='Username', name='ID')
+                            .form-control-feedback
+                                i.icon-user.text-muted
+                        .form-group.has-feedback.has-feedback-left
+                            input.form-control(type='password', placeholder='Password', name='password')
+                            .form-control-feedback
+                                i.icon-lock2.text-muted
+
+                        .form-group
+                            button.btn.bg-blue.btn-block(type='submit')
+                                | Login
+                                i.icon-arrow-right14.position-right
+
+                        .content-divider.text-muted.form-group
+                            span Don't have an account?
+                        a.btn.btn-default.btn-block.content-group(href='/login/join') Sign up
+                // /advanced login
+            // /main content
+        // /page content
+    // /page container
+
+    script.
+        var joinStatus = document.querySelector('.page-container').getAttribute('data-join');
+        var loginStatus = document.querySelector('.page-container').getAttribute('data-login');
+
+        if (joinStatus === 'true') {
+            alert('회원가입이 완료되었습니다. 로그인 해주세요');
+        }
+
+        if (loginStatus === 'true') {
+            alert('해당 ID나 비밀번호가 없습니다.');
+        }
