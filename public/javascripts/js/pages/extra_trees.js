@@ -19,6 +19,9 @@ $(function() {
     $(".tree-default").fancytree({
         init: function(event, data) {
             $('.has-tooltip .fancytree-title').tooltip();
+        },
+        click: function (event, data) {
+            window.open(data.node.tooltip, '_blank');
         }
     });
 
