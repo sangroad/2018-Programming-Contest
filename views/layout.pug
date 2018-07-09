@@ -13,6 +13,7 @@ html
         +css('css/core.css')
         +css('css/components.css')
         +css('css/colors.css')
+        block head_styles
 
         +js('js/plugins/loaders/pace.min.js')
         +js('js/core/libraries/jquery.min.js')
@@ -20,16 +21,9 @@ html
         +js('js/plugins/loaders/blockui.min.js')
         +js('js/plugins/ui/nicescroll.min.js')
         +js('js/plugins/ui/drilldown.js')
-        +js('js/core/libraries/jquery_ui/core.min.js')
-        +js('js/core/libraries/jquery_ui/effects.min.js')
-        +js('js/core/libraries/jquery_ui/interactions.min.js')
-        +js('js/plugins/extensions/cookie.js')
-        +js('js/plugins/forms/styling/switchery.min.js')
         +js('js/plugins/forms/styling/uniform.min.js')
-        +js('js/plugins/trees/fancytree_all.min.js')
-        +js('js/plugins/trees/fancytree_childcounter.js')
         +js('js/core/app.js')
-        +js('js/pages/extra_trees.js')
+        block head_scripts
 
     body.login-container
         .navbar.navbar-inverse
