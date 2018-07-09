@@ -1,5 +1,56 @@
 extends layout
 
+append head_scripts
+    +js('js/core/libraries/jquery_ui/core.min.js')
+    +js('js/core/libraries/jquery_ui/effects.min.js')
+    +js('js/core/libraries/jquery_ui/interactions.min.js')
+    +js('js/plugins/extensions/cookie.js')
+    +js('js/plugins/forms/styling/switchery.min.js')
+    +js('js/plugins/trees/fancytree_all.min.js')
+    +js('js/plugins/trees/fancytree_childcounter.js')
+    +js('js/pages/extra_trees.js')
+
 block content
-  h1= title
-  p Welcome to #{title}
+    .page-container
+        // Page content
+        .page-content
+            // Main content
+            .content-wrapper
+                // Initialization options
+                h6.content-group.text-semibold Initialization options
+                .row
+                    .col-md-12
+                        // Default unordered list markup
+                        .panel.panel-flat
+                            .panel-heading
+                                h6.panel-title Unordered list markup
+                            .panel-body
+                                p.mb-15
+                                    | Current example demonstrates multi level file tree with default options, initialized from an element.
+                                .tree-default.well.border-left-info.border-left-lg
+                                    ul
+                                        //li.folder.expanded Expanded folder with children
+                                        //    ul
+                                        //        li.folder.expanded Expanded sub-item
+                                        //            ul
+                                        //                li.active.focused Active sub-item (active and focus on init)
+                                        //                li Basic
+                                        //        li.folder Collapsed sub-item
+                                        //            ul
+                                        //                li Sub-item 2.2.1
+                                        //                li Sub-item 2.2.2
+                                        //li.has-tooltip(title='Look, a tool tip!') Menu item with key and tooltip
+                                        //li.folder Collapsed folder
+                                        //    ul
+                                        //        li Sub-item 1.1
+                                        //        li Sub-item 1.2
+                                        //li This is a selected item
+                                        //li.folder Document with some children (expanded on init)
+                                        //    ul
+                                        //        li Document sub-item
+                                        //        li Another document sub-item
+                                        //            ul
+                                        //                li Sub-item 2.1.1
+                                        //                li Sub-item 2.1.2s
+                                        each file in files
+                                            li(title=`${file.url}`)=file.name
